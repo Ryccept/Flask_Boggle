@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block title %} Home Page {%endblock%} {% block body
+%}
+<div id="highScore">Current High Score: {{session['highscore']}}</div>
+<div id="timer">Time Remaining: 60</div>
+<div id="board">
+  {% for row in board %}
+  <p>{{row}}</p>
+  {% endfor %}
+</div>
+
+<form id="guess">
+  <input type="text" name="guess" placeholder="enter a word" />
+  <button>Submit!</button>
+</form>
+<div id="verification"></div>
+<div id="score">Current Score: 0</div>
+<button class="reset">Replay!</button>
+{% endblock %}

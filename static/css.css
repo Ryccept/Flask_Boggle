@@ -1,0 +1,38 @@
+body {
+  font-size: 2.5em;
+}
+
+#board {
+  border: 2px solid black;
+  width: 400px;
+  height: 500px;
+  margin: auto;
+}
+
+#guess {
+  margin: auto;
+  width: 400px;
+}
+
+#verification {
+  margin: auto;
+  width: 400px;
+  font-size: 0.75em;
+}
+
+#score {
+  margin: auto;
+  width: 400px;
+  font-size: 0.75em;
+}
+
+#timer {
+  margin: auto;
+  width: 400px;
+  font-size: 0.75em;
+}
+
+.reset {
+  display: none;
+  width: 100px;
+}
