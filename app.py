@@ -12,6 +12,7 @@ boggle_game = Boggle()
 
 @app.route('/')
 def home_page():
+    """Home page for application. Also sets up three session variables."""
     session['board'] = boggle_game.make_board() 
     session['highscore'] = session.get("highscore", 0)
     session['games_played'] = session.get("games_played", 0)
@@ -20,17 +21,15 @@ def home_page():
 
 @app.route('/verify_word')
 def word_verify():
-    # this listens to the query string argument after the form is submitted and verifies the word
+    """this listens to the query string argument after the form is submitted and verifies the word"""
     guess = request.args['guess']
     verification = boggle_game.check_valid_word(session['board'], guess)
-    print(guess)
-    print(verification)
     return jsonify({'result':verification})
 
 
 @app.route('/end_game', methods=["POST"])
 def end_game():
-    # This tracks how many times the user has played the game while also updating the highscore.
+    """This tracks how many times the user has played the game while also updating the highscore."""
     score = int(request.json['currentScore'])
     current_high_score = session.get("highscore")
 
